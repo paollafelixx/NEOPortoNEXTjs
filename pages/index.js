@@ -1,43 +1,33 @@
-// pages/index.js
-import Head from 'next/head';
-import '../styles/styles.css';  // Importe o arquivo styles.css diretamente
+import React from 'react';
+import {
+  StyledNavbar,
+  Link,
+  StyledChatContainer,
+  StyledMessageContainer,
+  StyledInputContainer,
+  Input,
+  Button,
+  StyledMessage,
+} from '../styles/styles.js';
 
 const Home = () => (
   <div>
-    <Head>
-      {/* ... */}
-    </Head>
+    <StyledNavbar>
+      <Link href="/">Home</Link>
+      <Link href="/about">Sobre</Link>
+    </StyledNavbar>
 
-    <main className="chat-container">
-      
-      <div className="message-container">
+    <StyledChatContainer>
+      <StyledMessageContainer>
+        <StyledMessage type="sent">Olá</StyledMessage>
+        <StyledMessage type="received">Você entrou em contato...</StyledMessage>
+      </StyledMessageContainer>
 
-        <div className="message sent">
-          <p>Olá</p>
-        </div>
-
-        <div className="message received">
-          <p>Você entrou em contato com o PortoHelp, 
-              o mais novo serviço de atendimento ao cliente
-              da Porto Seguro.
-              Vou precisar do CPF do propietário do veículo!</p>
-        </div>
-
-      </div>
-      
-      <div className="input-container">
-        <input
-          type="text"
-          className="input"
-          placeholder="Digite sua mensagem..."
-        />
-        <button className="button">Enviar</button>
-      </div>
-    </main>
-
-    <footer>
-
-    </footer>
+      <StyledInputContainer>
+        <Input type="text" placeholder="Digite sua mensagem..." />
+        <Button>Enviar</Button>
+      </StyledInputContainer>
+    </StyledChatContainer>
   </div>
 );
 
