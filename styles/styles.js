@@ -1,4 +1,3 @@
-// styles.js
 import styled from 'styled-components';
 
 export const StyledNavbar = styled.div`
@@ -73,3 +72,47 @@ export const StyledHamburgerMenu = styled.div`
   cursor: pointer;
   margin-top: 20px;
 `;
+
+export const StyledBackButton = styled.button`
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+`;
+
+export const OptionButton = styled.button`
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+`;
+
+export const OptionsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+
+export const OptionGroup = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+`;
+
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+`;
+
+export default GlobalStyle;

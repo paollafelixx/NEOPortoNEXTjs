@@ -1,11 +1,12 @@
-// pages/rastreamento.js
+// Rastreamento.js
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
   StyledChatContainer,
-  StyledInfoContainer,
   StyledMessageContainer,
   StyledMessage,
   Button,
+  StyledBackButton,
 } from '../styles/styles';
 
 const Rastreamento = () => {
@@ -18,11 +19,10 @@ const Rastreamento = () => {
   return (
     <div>
       <StyledChatContainer>
+          <Link href="/">
+            <StyledBackButton>Voltar para o chat</StyledBackButton>
+          </Link>
         <StyledMessageContainer>
-          {/* Mensagem inicial */}
-          <StyledMessage type="received">
-            <p>Olá! Como posso ajudar você hoje?</p>
-          </StyledMessage>
 
           {/* Informações básicas */}
           <StyledMessage type="received">
