@@ -1,13 +1,11 @@
+// pages/rastreamento.js
 import React, { useState } from 'react';
-import Link from 'next/link';
 import {
   StyledChatContainer,
   StyledInfoContainer,
   StyledMessageContainer,
   StyledMessage,
   Button,
-  StyledIcon,
-  StyledBackButton, // Adicione esta linha para importar o botão de volta
 } from '../styles/styles';
 
 const Rastreamento = () => {
@@ -20,14 +18,17 @@ const Rastreamento = () => {
   return (
     <div>
       <StyledChatContainer>
-      <Link href="/">
-            <StyledBackButton>←</StyledBackButton>
-            </Link>
         <StyledMessageContainer>
-
+          {/* Mensagem inicial */}
           <StyledMessage type="received">
-            <StyledIcon>👤</StyledIcon>
-            <p>Diogo Mendes Moreira</p>
+            <p>Olá! Como posso ajudar você hoje?</p>
+          </StyledMessage>
+
+          {/* Informações básicas */}
+          <StyledMessage type="received">
+            <p>Nome do Motorista: John Doe</p>
+            <p>Número do Carro: ABC-1234</p>
+            <p>Modelo do Carro: Sedan</p>
           </StyledMessage>
 
           {/* Botão para mostrar/ocultar informações adicionais */}
