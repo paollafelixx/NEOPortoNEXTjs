@@ -1,8 +1,6 @@
-// pages/index.js
 import React from 'react';
+import Link from 'next/link';
 import {
-  StyledNavbar,
-  Link,
   StyledChatContainer,
   StyledMessageContainer,
   StyledInputContainer,
@@ -10,7 +8,6 @@ import {
   Button,
   StyledMessage,
 } from '../styles/styles';
-import Rastreamento from './rastreamento.js';
 
 const Home = () => (
   <div>
@@ -18,7 +15,7 @@ const Home = () => (
       <StyledMessageContainer>
         <StyledMessage type="sent">Oi</StyledMessage>
         <StyledMessage type="received">
-          <Link href="/rastreamento">Link rastreamento</Link>
+          <Link href="/rastreamento">Rastrear Veículo</Link>
         </StyledMessage>
       </StyledMessageContainer>
 

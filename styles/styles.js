@@ -1,3 +1,4 @@
+// styles.js
 import styled from 'styled-components';
 
 export const StyledNavbar = styled.div`
@@ -18,6 +19,8 @@ export const StyledChatContainer = styled.div`
   margin: 0 auto;
   margin-top: 50px;
   background-color: #ededed;
+  padding: 20px;
+  border-radius: 10px;
 `;
 
 export const StyledMessageContainer = styled.div`
@@ -25,27 +28,17 @@ export const StyledMessageContainer = styled.div`
   border: 1px solid #ccc;
   overflow-y: scroll;
   padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
 `;
 
 export const StyledMessage = styled.div`
-  margin: 5px;
-  padding: 8px;
-  border-radius: 5px;
-  ${({ type }) => {
-    if (type === 'sent') {
-      return `
-        align-self: flex-end;
-        background-color: #00B0E2;
-      `;
-    }
-    if (type === 'received') {
-      return `
-        align-self: flex-start;
-        background-color: #fff;
-        border: 1px solid #ccc;
-      `;
-    }
-  }}
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: ${({ type }) => (type === 'received' ? '#fff' : '#00B0E2')};
+  color: ${({ type }) => (type === 'received' ? '#000' : '#fff')};
+  align-self: ${({ type }) => (type === 'received' ? 'flex-start' : 'flex-end')};
 `;
 
 export const StyledInputContainer = styled.div`
@@ -65,4 +58,18 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+`;
+
+export const StyledInfoContainer = styled.div`
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: ${({ show }) => (show ? 'block' : 'none')};
+`;
+
+export const StyledHamburgerMenu = styled.div`
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 20px;
 `;
