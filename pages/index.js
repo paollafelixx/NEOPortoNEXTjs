@@ -147,11 +147,9 @@ const Home = () => (
         <StyledMessage type="received">
           Aqui está seu(s) link(s) de rastreio:
           link
-          Obrigada por usar nossos serviços! 
+          Obrigada por usar nossos serviços!
           <Link href="/rastreamento">Rastrear Veículo</Link>
         </StyledMessage>
-
-
 
       </StyledMessageContainer>
 

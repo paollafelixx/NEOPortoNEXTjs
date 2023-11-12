@@ -19,31 +19,33 @@ const Rastreamento = () => {
   return (
     <div>
       <StyledChatContainer>
-          <Link href="/">
-            <StyledBackButton>Voltar para o chat</StyledBackButton>
-          </Link>
+        <Link href="/">
+          <StyledBackButton>Voltar para o chat</StyledBackButton>
+        </Link>
         <StyledMessageContainer>
 
-          {/* Informações básicas */}
           <StyledMessage type="received">
             <p>Nome do Motorista: John Doe</p>
-            <p>Número do Carro: ABC-1234</p>
-            <p>Modelo do Carro: Sedan</p>
+            <p>Endereço: Av. Fortunata Tadielli Natucci, 1156,
+              Estr. de Perus - São Paulo, SP</p>
+            <p>Tipo de Guincho: Plano Ouro</p>
+
           </StyledMessage>
 
-          {/* Botão para mostrar/ocultar informações adicionais */}
           <StyledMessage type="received">
             <Button onClick={toggleAdditionalInfo}>
               {showAdditionalInfo ? 'Ocultar Detalhes' : 'Mostrar Detalhes'}
             </Button>
           </StyledMessage>
 
-          {/* Informações adicionais (exibidas quando showAdditionalInfo é true) */}
           {showAdditionalInfo && (
             <StyledMessage type="received">
-              <p>Tipo de Guincho: Plano Ouro</p>
               <p>Local: São Paulo, SP</p>
-              {/* Adicione mais informações conforme necessário */}
+              <p>Modelo do veiculo: Volvo FH 540</p>
+              <p>Placa: CLA1939</p>
+              <p>Táxi: Não</p>
+              <p>Número de protocolo: 63587654156</p>
+
             </StyledMessage>
           )}
         </StyledMessageContainer>
