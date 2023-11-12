@@ -1,3 +1,4 @@
+// pages/index.js
 import React from 'react';
 import {
   StyledNavbar,
@@ -8,19 +9,17 @@ import {
   Input,
   Button,
   StyledMessage,
-} from '../styles/styles.js';
+} from '../styles/styles';
+import Rastreamento from './rastreamento.js';
 
 const Home = () => (
   <div>
-    <StyledNavbar>
-      <Link href="/">Home</Link>
-      <Link href="/about">Sobre</Link>
-    </StyledNavbar>
-
     <StyledChatContainer>
       <StyledMessageContainer>
-        <StyledMessage type="sent">Olá</StyledMessage>
-        <StyledMessage type="received">Você entrou em contato...</StyledMessage>
+        <StyledMessage type="sent">Oi</StyledMessage>
+        <StyledMessage type="received">
+          <Link href="/rastreamento">Link rastreamento</Link>
+        </StyledMessage>
       </StyledMessageContainer>
 
       <StyledInputContainer>
