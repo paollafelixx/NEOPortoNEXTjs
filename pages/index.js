@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import Iframe from 'react-iframe';
+
 import {
   StyledChatContainer,
   StyledMessageContainer,
@@ -14,29 +16,26 @@ const Home = () => (
   <div>
     <StyledChatContainer>
       <StyledMessageContainer>
-        <StyledMessage type="sent">Oi</StyledMessage>
+        <StyledMessage type="sent">Olá</StyledMessage>
 
         <StyledMessage type="received">
-          Você entrou em contato com o PortoHelp,
-          o mais novo serviço de atendimento ao cliente
-          da Porto Seguro.
+          Você entrou em contato com a NEO Porto,
           Vou precisar do CPF do proprietário do veículo!
         </StyledMessage>
 
-        <StyledMessage type="sent">XXX.XXX.XXX-XX</StyledMessage>
+        <StyledMessage type="sent">596.922.470-74</StyledMessage>
 
         <StyledMessage type="received">
-          Certo, encontrei o cadastro do seu veiculo!
-          - Trator
+          Certo, encontrei o cadastro do seu veiculo (Trator)! Olá Renata
         </StyledMessage>
 
         <StyledMessage type="received">
           Para melhorar a assertividade, precisamos de mais algumas informações. O veículo possui eixos?
         </StyledMessage>
 
-        <OptionButton onClick={() => console.log("Opção 1 selecionada")}>Dois eixos</OptionButton>
-        <OptionButton onClick={() => console.log("Opção 2 selecionada")}>Três eixos</OptionButton>
-        <OptionButton onClick={() => console.log("Opção 2 selecionada")}>Quatro eixos ou mais</OptionButton>
+        <OptionButton onClick={() => console.log("Opção 1 selecionada")}>2</OptionButton>
+        <OptionButton onClick={() => console.log("Opção 2 selecionada")}>3</OptionButton>
+        <OptionButton onClick={() => console.log("Opção 2 selecionada")}>4 ou mais</OptionButton>
         <OptionButton onClick={() => console.log("Opção 2 selecionada")}>Não possui eixos</OptionButton>
 
 
@@ -51,10 +50,10 @@ const Home = () => (
         <StyledMessage type="sent">Sim</StyledMessage>
 
         <StyledMessage type="received">
-          Poderia informar o peso aproximado?
+          Poderia informar o peso aproximado em toneldas?
         </StyledMessage>
 
-        <StyledMessage type="sent">5 toneladas</StyledMessage>
+        <StyledMessage type="sent">5</StyledMessage>
 
         <StyledMessage type="received">
           Gostaria de enviar fotos para que possam passar por nosso reconhecimento de imagem, assim aumentando a assertividade do modal?
@@ -64,6 +63,9 @@ const Home = () => (
           (uma aba se abrirá)</OptionButton>
         <OptionButton onClick={() => console.log("Opção 2 selecionada")}>Não </OptionButton>
 
+        <StyledMessage type="received">
+          <Link href="/reconhecimento">Tutorial para envio de fotos</Link>
+        </StyledMessage>
 
         <StyledMessage type="received">
           Obrigada pelo envio!
@@ -72,7 +74,33 @@ const Home = () => (
           parado!
         </StyledMessage>
 
-        <StyledMessage type="sent">IMAGEM</StyledMessage>
+        <StyledMessage type="sent">
+          <div className="mapouter">
+            <div className="gmap_canvas">
+              <iframe
+                src="https://maps.google.com/maps?q=fiap%20paulista&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                frameBorder="0"
+                scrolling="no"
+                style={{ width: '100%', height: '290px' }}
+              ></iframe>
+              <style>
+                {`
+                  .mapouter {
+                    position: relative;
+                    height: 290px;
+                    width: 100%;
+                    background: #fff;
+                  }
+                  .gmap_canvas {
+                    overflow: hidden;
+                    height: 290px;
+                    width: 100%;
+                  }
+                `}
+              </style>
+            </div>
+          </div>
+        </StyledMessage>
 
         <StyledMessage type="received">
           Por favor, informe um ponto de referêcia! Se não houver, digite
@@ -87,8 +115,7 @@ const Home = () => (
           cidade, estado
         </StyledMessage>
 
-        <StyledMessage type="sent">Rua ######, numero ###,
-          São Paulo, SP.</StyledMessage>
+        <StyledMessage type="sent">Av. Paulista, 1106 - 7º andar - Bela Vista, São Paulo - SP, 01311-000, Brasil</StyledMessage>
 
         <StyledMessage type="received">
           Você precisa de um táxi para deixar o
@@ -102,8 +129,6 @@ const Home = () => (
           veículo?
         </StyledMessage>
 
-
-
         <StyledMessage type="sent">Sim</StyledMessage>
 
         <StyledMessage type="received">
@@ -111,16 +136,13 @@ const Home = () => (
           solicitação:
           Serviço: Guincho para veículos
           pesados
-          Localização: Rua xxxxx, xxx, São
-          Paulo, SP
+          Localização: Av. Paulista, 1106 - 7º andar - Bela Vista, São Paulo - SP, 01311-000, Brasil
           Ponto de Referência: Não tem
-          Endereço de destino: Rua
-          ######, numero ###, São Paulo,
-          SP
+          Número de protocolo: 63587654156
+          Táxi: Não
         </StyledMessage>
 
         <StyledMessage type="sent">Sim</StyledMessage>
-
 
 
         <StyledMessage type="received">
@@ -145,10 +167,8 @@ const Home = () => (
           Aproximadamente 40 minutos.
         </StyledMessage>
         <StyledMessage type="received">
-          Aqui está seu(s) link(s) de rastreio:
-          link
-          Obrigada por usar nossos serviços!
-          <Link href="/rastreamento">Rastrear Veículo</Link>
+          Aqui está seu link de rastreio: <Link href="/rastreamento">Rastrear Veículo </Link>
+          Obrigade por usar nossos serviços!
         </StyledMessage>
 
       </StyledMessageContainer>
