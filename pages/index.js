@@ -26,7 +26,7 @@ const Home = () => (
         <StyledMessage type="sent">596.922.470-74</StyledMessage>
 
         <StyledMessage type="received">
-          Certo, encontrei o cadastro do seu veiculo (Trator)! Olá Renata
+          Certo, encontrei o cadastro do seu veiculo (Trator)! Olá Renata!
         </StyledMessage>
 
         <StyledMessage type="received">
